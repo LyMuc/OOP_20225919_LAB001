@@ -1,0 +1,29 @@
+- Nếu chọn Cancel thì sẽ hủy quá trình Launch Program. 
+- Có thể viết đoạn code như này:
+import javax.swing.JOptionPane;
+
+public class CustomOptionDialogue {
+    public static void main(String[] args) {
+        // Custom button text options
+        String[] options = {"Accept", "Decline"};
+
+        // Show a dialog with custom buttons
+        int response = JOptionPane.showOptionDialog(null,
+            "Do you accept the terms?",
+            "Custom Option Dialog",
+            JOptionPane.DEFAULT_OPTION,
+            JOptionPane.QUESTION_MESSAGE,
+            null,
+            options,
+            options[0]);
+
+        // Handle the user's response
+        if (response == 0) {
+            System.out.println("You selected Accept.");
+        } else if (response == 1) {
+            System.out.println("You selected Decline.");
+        } else {
+            System.out.println("You closed the dialog without making a choice.");
+        }
+    }
+}
